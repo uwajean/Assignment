@@ -1,5 +1,3 @@
-package amacookies;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/classe")
 public class classe extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String usernameOrEmail = "";
+        String Names = "";
 
         // Retrieve the cookie value if it exists
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
-                if ("usernameOrEmail".equals(cookie.getName())) {
-                    usernameOrEmail = cookie.getValue();
+                if ("Names".equals(cookie.getName())) {
+                	Names = cookie.getValue();
                     break;
                 }
             }
@@ -30,13 +28,13 @@ public class classe extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE html>");
         out.println("<html lang='en'>");
-        out.println("<head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Username/Email Form</title></head>");
-        out.println("<body>");
-        out.println("<h1>Enter your Username or Email</h1>");
-        out.println("<form action='StoreValueServlet' method='POST'>");
-        out.println("<label for='userInput'>Username/Email:</label>");
-        out.println("<input type='text' id='userInput' name='userInput' value='" + usernameOrEmail + "'>");
-        out.println("<button type='submit'>Submit</button>");
+        out.println("<head ><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title></title></head>");
+        out.println("<body style='background:black;color:white'>");
+        out.println("<h1>Enter your Username </h1>");
+        out.println("<form action='classe' method='POST'><hr>");
+        out.println("<label for='userInput'>Username:</label><br><br>");
+        out.println("<input type='text' id='userInput' style='width:400px;height:50px;text-align:center:font-size:20px' name='userInput' value='" + Names + "'><br>");
+        out.println("<button style='width:100px;height:40px;;font-size:10px;background-color:blue;color:white;border:none' type='submit'>Submit</button>");
         out.println("</form>");
         out.println("</body>");
         out.println("</html>");
@@ -54,4 +52,5 @@ public class classe extends HttpServlet {
         response.sendRedirect("index.jsp");
     }
 }
+
 
