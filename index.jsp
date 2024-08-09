@@ -82,7 +82,7 @@
 <body>
     <form action="classe" method="POST">
       <div>
-    <h1>ENTER AN EN EMAIL HERE</h1><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+    <h1>ENTER YOUR FULL NAMES HERE</h1><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
     <hr>
        
       <h2>Name: UWAYEZU Jeanpaul</h2>
@@ -91,7 +91,7 @@
     <h2>JAVA</h2>
     <br><br><br><br><br><br>
 
-        <label for="userInput">Enter An Email:</label><br>
+        <label for="userInput">ENTER Your NAME</label><br>
         <input type="text" id="userInput" placeholder="Enter here your email!" name="userInput" value="<%= usernameOrEmail %>"><br>
         <button type="submit">Submit</button>
       
